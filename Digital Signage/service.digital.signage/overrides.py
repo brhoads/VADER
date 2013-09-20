@@ -76,4 +76,4 @@ if (__name__ == "__main__"):
 	xbmc.log("error understanding override")
 
     while( not xbmc.abortRequested):
-		xbmc.sleep(100)
+	xbmc.sleep(100)
