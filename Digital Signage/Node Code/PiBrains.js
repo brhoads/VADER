@@ -576,8 +576,7 @@ http.createServer(function (inreq, res) {
 // INPUT: emergencyDestination - The piipSelect value. aka IP address.
 // Example:
 //		emergencyOverride(row.ipaddress) */
-function emergencyOverride(emergencyDestination)
-{
+function emergencyOverride(emergencyDestination){
 	if (alertChunk.Control == "ON") {
 		console.log("EMERGENCY OVERRIDE HAS BEEN ACTIVATED");
 		callEmergency(alertChunk.Source, emergencyDestination);
@@ -617,7 +616,6 @@ function callEmergency(emergencyCall, emergencyDestination) {
 // INPUT: emergencyDestination - IPaddress of Pi's needing to be played
 // Examples:
 // 		playEmergencyFolder(emergencyDestination) -> calls playEmergency*/
-
 function playEmergencyFolder(emergencyDestination) {
 	var data = {
         jsonrpc: "2.0",
@@ -748,8 +746,6 @@ var HTMLserver=http.createServer(function(req,res){
 			displayChannels += '<option value = "'+row.ip_address+'">' +row.channel_name+ '</option><br>'
 		});
 
-
-
 		//Creates a "Select All" option
 		var selectAll = '<script language="JavaScript"> \
 						function toggle(source) { \
@@ -798,7 +794,6 @@ var HTMLserver=http.createServer(function(req,res){
 		alert += data;
 		});
 
-
 		req.on('end', function () 
 		{
 			console.log(alert + "<-Posted Data");
@@ -829,10 +824,6 @@ var HTMLserver=http.createServer(function(req,res){
 				emergencyOverride(row.ipaddress);
 				console.log("EMERGENCY OVERRIDE COMPLETE");
 			});
-
-
-
-
 		});
 	}
 }).listen(80);
