@@ -29,7 +29,7 @@ class XBMCPlayer(xbmc.Player):
 		xbmc.log("Playback Ended")
 		self.playSignage()
 	def playSignage(self):
-		time.sleep(5)
+		time.sleep(3)
 		xbmc.log("Playing Media")
 		xbmc.executebuiltin('ActivateWindow(Pictures,"/media/piFolders/'+__addon__.getSetting("PiDee")+'")')
 		xbmc.executebuiltin("Action(Play)")
@@ -52,11 +52,11 @@ def playEmergency(args):
 def playIPTV(args):
 	xbmc.log("IPTV playing")
 
+digitalSignagePlayer = XBMCPlayer()
+xbmc.log("Create Digital Signage Player")
 #Standard setup of main
 if (__name__ == "__main__"):
     xbmc.log('Version %s started' % __addonversion__)
-    digitalSignagePlayer = XBMCPlayer()
-    xbmc.log("Create Digital Signage Player")
 
     try:
     	if(sys.argv[1] == "piDee"):
@@ -76,4 +76,4 @@ if (__name__ == "__main__"):
 	xbmc.log("error understanding override")
 
     while( not xbmc.abortRequested):
-	xbmc.sleep(100)
+		xbmc.sleep(100)
